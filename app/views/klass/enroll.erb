@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Enroll In  Class </title> 
+</head>
+<body>
+    <h1>  Enroll in Class </h1>
+    <form action="/enroll" method="POST">
+
+        <label for="name">Class Name</label>
+       <select name="class_id">
+            <% Klass.all.each do |klass| %>
+                <option value=<%= klass.id %> ><%= klass.name %></option>
+            <% end %>
+        </select>
+
+        <label for="name">Student Name</label>
+       <select name="student_id">
+            <% Student.all.each do |student| %>
+                <option value=<%= student.id %> ><%= student.name %></option>
+            <% end %>
+        </select>
+
+
+ 
+         <input type="submit" value="Enroll">
+
+    </form>
+
+
+
+    
+
+</body>
+</html> 

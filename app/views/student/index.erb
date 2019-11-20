@@ -5,10 +5,22 @@
 </head>
 <body>
     <h1> Here are all Enrolled Students  </h1>
+
+       
+        <a href = "/"> <button> Back to home Page</button></a>
+        <a href = "/students/new"> <button> Add A new Student </button></a> 
+      
+
+
       <ul>
       <% @student.each do |student|  %>
       <li><a href="/students/<%= student.id %>"><%=  student.name %></li></a>
       <% end   %>
-     <ul>
+     </ul>
+
+       
+ 
+  
+
 </body>
 </html>

@@ -8,8 +8,11 @@
     <form action="/classes/<%= @klass.id %>" method="POST">
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Kill Class">
+         <a href = "/classes"> <button> List of All classes </button></a>
+        <a href = "/classes/<%= @klass.id %>/edit"> <button> Edit Class </button></a>
     </form>
-    
+  
+
     <div> 
          <h4> Students Currently Enrolled in: <%= @klass.name %>  </h4>
         <ul>
@@ -17,7 +20,7 @@
             <a href = "/students/<%= student.id %>"><li> <%= student.name %></li></a>
             <% end %>
         </ul>
-      </div>
+  </div>
 
 </body>
 </html> 

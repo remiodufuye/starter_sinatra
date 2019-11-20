@@ -12,6 +12,12 @@ class KlassController < Sinatra::Base
         erb :new
     end 
 
+    get '/classes/enroll' do
+        @klass = Klass.all
+        @student = Student.all
+        erb :enroll
+    end 
+
     get '/classes/:id' do 
         @klass = Klass.find(params[:id])
         erb :show
@@ -20,6 +26,13 @@ class KlassController < Sinatra::Base
     post '/classes' do 
         klass = Klass.create(name: params[:name])
         redirect "/classes/#{klass.id}"
+    end 
+
+    post '/enroll' do 
+        student = Student.find(params[:student_id])
+        klass = Klass.find(params[:class_id])
+        StudentKlass.create(student: student , klass: klass)
+        redirect "/students/#{student.id}"
     end 
 
     patch '/classes/:id' do 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Class Details </title>
+</head>
+<body>
+    <h1> Class: <%= @klass.name %> </h1>
+    <form action="/classes/<%= @klass.id %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Kill Class">
+    </form>
+    
+    <div> 
+         <h4> Students Currently Enrolled in: <%= @klass.name %>  </h4>
+        <ul>
+             <% @klass.students.each do |student| %>
+            <a href = "/students/<%= student.id %>"><li> <%= student.name %></li></a>
+            <% end %>
+        </ul>
+      </div>
+
+</body>
+</html> 

@@ -34,12 +34,12 @@ class StudentController < Sinatra::Base
         @student = Student.find(params[:id])
         erb :edit
     end 
-
-    delete '/students/:id' do 
+    
+    delete '/students/:id' do
         student = Student.find(params[:id])
+        student.student_klasses.destroy_all
         student.destroy
         redirect '/students'
-    end 
-
+    end
 
 end

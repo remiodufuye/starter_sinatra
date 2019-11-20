@@ -47,11 +47,11 @@ class KlassController < Sinatra::Base
         erb :edit
     end 
 
-    delete '/classes/:id' do 
+    delete '/classes/:id' do
         klass = Klass.find(params[:id])
+        klass.student_klasses.destroy_all
         klass.destroy
         redirect '/classes'
-    end 
-
+    end
 
 end

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Here are all Enrolled Students </title>
+</head>
+<body>
+    <h1> Here are all Enrolled Students  </h1>
+      <ul>
+      <% @student.each do |student|  %>
+      <li><a href="/students/<%= student.id %>"><%=  student.name %></li></a>
+      <% end   %>
+     <ul>
+</body>
+</html>

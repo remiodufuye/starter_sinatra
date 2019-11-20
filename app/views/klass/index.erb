@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> All Classes</title>
+</head>
+<body>
+    <h1>  Here are all available Classes </h1>
+      <ul>
+      <% @klass.each do |klass|  %>
+      <li><a href="/classes/<%= klass.id %>"><%=  klass.name %></li></a>
+      <% end   %>
+     <ul>
+</body>
+</html>

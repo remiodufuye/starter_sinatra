@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> All Classes</title>
+</head>
+<body>
+
+    
+
+    <h1>  Here are all available Classes </h1>
+
+   
+        <a href = "/"> <button> Back to home Page</button></a>
+        <a href = "/classes/new"> <button> Add A new Class </button></a> 
+         <a href = "/classes/enroll"> <button> Enroll </button></a> 
+     
+
+   
+      <ul>
+      <% @klass.each do |klass|  %>
+      <li><a href="/classes/<%= klass.id %>"><%=  klass.name %></li></a>
+      <% end   %>
+     </ul>
+    
+
+     
+
+</body>
+</html>

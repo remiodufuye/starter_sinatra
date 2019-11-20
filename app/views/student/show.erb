@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details </title>
+</head>
+<body>
+    <h1>  Student: <%= @student.name %> </h1>
+    <form action="/students/<%= @student.id %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Kill">
+        <a href = "/students"> <button> List of All students </button></a>
+        <a href = "/students/<%= @student.id %>/edit"> <button> Edit Student </button></a>
+    </form>
+
+
+   
+     
+   
+
+        
+    <div> 
+         <h4> Current Classes For: <%= @student.name%>  </h4>
+        <ul>
+             <% @student.klasses.each do |klass| %>
+            <a href = "/classes/<%= klass.id %>"><li> <%= klass.name %></li></a>
+            <% end %>
+        </ul>
+  </div>
+
+
+
+</body>
+</html>
